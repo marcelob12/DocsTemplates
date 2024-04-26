@@ -1,0 +1,85 @@
+<div class="w-full h-screen bg-white flex flex-col  p-5">
+  <p-toast></p-toast>
+  <div>
+    <h1 class="text-2xl pb-5">Tipo de Trámite</h1>
+    <h2 class="font-semibold text-primary pb-3">Seleccione un tupo de documento</h2>
+
+    <p-dropdown [options]="formalitiesOptions" optionLabel="name" placeholder="Trámite"
+      [(ngModel)]="selectedFormality"></p-dropdown>
+
+
+    <div *ngIf="selectedFormality && selectedFormality.name == 'Vialidad' ">
+      <div class="flex gap-2 py-7">
+        <h2>Requisitos para el trámite seleccionado:</h2>
+        <img class="w-7 h-7" src="../../../assets/icons/question.svg" alt="questionIcon">
+      </div>
+      <div class="bg-secondary  md:w-[45rem] h-14 flex   items-center gap-5 text-white rounded-t-md p-2">
+        <img class="w-7 h-7" src="../../../assets/icons/caution.svg" alt="">
+        <p>
+          Para solicitar trámite de vialidad, suministre plantilla en formato Excel
+        </p>
+      </div>
+      <div class="border-2  md:w-[45rem] border-secondary rounded-b-md p-2">
+        <li>
+          Cargar plantilla de Vialidad
+        </li>
+        <li>
+          Persona jurídica
+        </li>
+      </div>
+    </div>
+
+
+
+    <div>
+      <h3 class="uppercase py-7"> vialidades a generar: {{documentData.length > 0 ? documentData.length - 1 : 0 }}</h3>
+      <div>
+        <div *ngIf="documentData.length <= 0"
+          class="py-2 flex flex-col [&>div>button]:py-2  [&>div>button]:rounded-md [&>div>button]:border-2 [&>div>button]:border-primary [&>div>button]:w-[12rem] [&>div>button]:h-auto  gap-2 [&>div>button]:font-normal">
+          <p class="text-primary font-semibold">Cargue archivos de vialidad a generar:</p>
+          <div class="flex gap-5">
+
+            <button class="text-sky-600" (click)="exportExampleTemplate()">Descargar plantilla</button>
+            <input type="file" accept=".xlsx" style="display: none;" (change)="uploadTemplateinfo($event)" #fileInput>
+            <button class="bg-primary text-white" (click)="fileInput.click()">Cargar documento</button>
+            <button>Atrás</button>
+
+          </div>
+        </div>
+        <div *ngIf="documentData.length >= 1"
+          class="py-2 md:flex [&>button]:p-2 [&>button]:rounded-md [&>button]:border-2 [&>button]:border-primary [&>button]:w-[14rem] [&>button]:h-auto flex gap-5 [&>button]:font-medium">
+          <p class="text-primary font-semibold">Confirme que se capturaron todos los datos vialidad:</p>
+          <input type="file" accept=".xlsx" style="display: none;" (change)="uploadTemplateinfo($event)" #fileInput>
+          <button (click)="fileInput.click()">Volver a cargar</button>
+          <button class="bg-blue-950 text-white">Ir a Pagar</button>
+          <button (click)="restartDoc()">Atrás</button>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="py-7 border-l-indigo-600">
+    <div class="overflow-x-auto ">
+      <table class="min-w-full">
+        <thead>
+          <tr class="bg-blue-950 text-white text-sm">
+            <th *ngFor="let header of documentData[0]" class="p-2">{{ header }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center" *ngFor="let rowData of documentData.slice(1)">
+            <td *ngFor="let cellData of rowData" class="p-2">{{ cellData }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<router-outlet />
