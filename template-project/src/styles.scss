@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+/* Estilos para modificar el tamaño del desplegable */
+.p-dropdown .p-dropdown-label,
+.p-dropdown .p-dropdown-trigger {
+    font-size: 14px;
+    /* Tamaño de fuente */
+    padding: 0.5rem 1rem;
+    width: 100px;
+    /* Relleno interno */
+}
+
+/* Opcional: Ajustar el tamaño del menú desplegable */
+.p-dropdown .p-dropdown-items-wrapper {
+    max-height: 900px;
+    /* Altura máxima del menú desplegable */
+    font-size: 14px;
+    /* Tamaño de fuente */
+}
