@@ -4,6 +4,7 @@ Este repositorio contiene el código de una aplicación que utiliza las siguient
 
 - Tailwind CSS
 - PrimeNG
+- Xlsx
 
 ### Pasos para Ejecutar la Aplicación
 
