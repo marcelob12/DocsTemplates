@@ -1,27 +1,35 @@
-# TemplateProject
+## Instrucciones de Uso
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+Este repositorio contiene el código de una aplicación que utiliza las siguientes bibliotecas:
 
-## Development server
+- Tailwind CSS
+- PrimeNG
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Pasos para Ejecutar la Aplicación
 
-## Code scaffolding
+1. **Clonar el Repositorio:** Clone este repositorio a su máquina local utilizando el siguiente comando:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    ```bash
+    git clone <url_del_repositorio>
+    ```
 
-## Build
+2. **Instalar Dependencias:** Después de clonar el repositorio, navegue hasta el directorio del proyecto y ejecute el siguiente comando para instalar todas las dependencias necesarias:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    ```bash
+    npm install
 
-## Running unit tests
+    ng s
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. **Probar la Aplicación:** Dentro del repositorio, encontrará dos archivos que pueden ser utilizados para probar el funcionamiento de la aplicación:
 
-## Running end-to-end tests
+    - `PlantillaAprobadaPorElSistema.xlsx`: Un archivo que contiene datos válidos para la aplicación.
+    - `PlantillaDenegadaPorElSistema.xlsx`: Un archivo que contiene datos inválidos para la aplicación.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    Puede utilizar estos archivos para probar el comportamiento de la aplicación.
 
-## Further help
+### Ejemplo de Uso
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Después de completar los pasos anteriores, puede ejecutar la aplicación y probar su funcionalidad utilizando los archivos proporcionados.
+
+¡Disfrute explorando la aplicación!
